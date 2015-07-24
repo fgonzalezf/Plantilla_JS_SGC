@@ -146,10 +146,10 @@ define([
   }*/
             {
                 type: 'dynamic',
-                url: 'http://srvags.sgc.gov.co/arcgis/rest/services/Geomorfodinamica/Geomorfodinamica/MapServer',
+                url: 'http://srvags.sgc.gov.co/arcgis/rest/services/METG/METADATO/MapServer',
                 title: 'Metadato geografico',
                 options: {
-                    id: 'PuntoGeomorfodinamico',
+                    id: 'Metadato',
                     opacity: 1.0,
                     visible: true,
                     imageParameters: imageParameters
@@ -194,7 +194,7 @@ define([
                 id: 'identify',
                 type: 'titlePane',
                 path: 'gis/dijit/Identify',
-                title: 'Identify',
+                title: 'Identificador',
                 open: false,
                 position: 3,
                 options: 'config/identify'
@@ -220,12 +220,77 @@ define([
                     map: true,
                     mapClickMode: true,
 
+
+
                     // use a tab container for multiple tables or
                     // show only a single table
                     useTabs: true,
 
                     // used to open the sidebar after a query has completed
-                    sidebarID: 'sidebarBottom'
+                    sidebarID: 'sidebarBottom',
+                    tables: [
+                        {
+                            title: 'Metadato',
+                            topicID: 'censusQuery',
+                            queryOptions: {
+                                queryParameters: {
+                                    url: 'http://srvags.sgc.gov.co/arcgis/rest/services/METG/METADATO/MapServer/0',
+                                    maxAllowableOffset: 100,
+                                    where: ''
+                                },
+
+                                idProperty: 'ObjectID',
+                                outputSpatialReference: 4686,
+                            },
+                            featureOptions: {
+                                /*
+                                 Show the resulting features on the map
+                                 */
+                                features: true,
+
+                                /*
+                                 Allow records to be selected in the grid
+                                 */
+                                selected: true,
+
+                                /*
+                                 Allow the display of an info window when a feature is selected
+                                 */
+                                infoWindow: true,
+
+                                /*
+                                 Allow the user to highlight features that have been selected in the grid
+                                 */
+                                highlight: false,
+
+                                /*
+                                 Show the source feature used in the search
+                                 */
+                                source: true,
+
+                                /*
+                                 Allow the creation and display of a buffer
+                                 */
+                                buffer: false,
+
+                                /*
+                                 Do we zoom to the source features after the query
+                                 */
+                                zoomToSource: true,
+
+                                /*
+                                 Do we zoom to the selected features after the query
+                                 */
+                                zoomToSelected: true,
+
+                                /*
+                                 Allow StreetView when there is a single selected feature
+                                 */
+                                streetView: true
+                            },
+                        }
+                    ],
+
                 }
             },
             exportDialog: {
@@ -233,7 +298,7 @@ define([
                 id: 'export',
                 type: 'floating',
                 path: 'gis/dijit/Export',
-                title: 'Export',
+                title: 'Exportar',
                 options: {}
             },
             basemaps: {
@@ -330,7 +395,7 @@ define([
                 id: 'legend',
                 type: 'titlePane',
                 path: 'esri/dijit/Legend',
-                title: 'Legend',
+                title: 'Legenda',
                 open: false,
                 position: 0,
                 options: {
@@ -343,7 +408,7 @@ define([
                 id: 'layerControl',
                 type: 'titlePane',
                 path: 'gis/dijit/LayerControl',
-                title: 'Layers',
+                title: 'Capas de Información',
                 open: false,
                 position: 0,
                 options: {
@@ -359,7 +424,7 @@ define([
                 id: 'bookmarks',
                 type: 'titlePane',
                 path: 'gis/dijit/Bookmarks',
-                title: 'Bookmarks',
+                title: 'Marcadores',
                 open: false,
                 position: 2,
                 options: 'config/bookmarks'
@@ -370,7 +435,7 @@ define([
                 type: 'titlePane',
                 canFloat: true,
                 path: 'gis/dijit/Find',
-                title: 'Find',
+                title: 'Buscar',
                 open: false,
                 position: 3,
                 options: 'config/find'
@@ -381,7 +446,7 @@ define([
                 type: 'titlePane',
                 canFloat: true,
                 path: 'gis/dijit/Draw',
-                title: 'Draw',
+                title: 'Dibujar',
                 open: false,
                 position: 4,
                 options: {
@@ -395,7 +460,7 @@ define([
                 type: 'titlePane',
                 canFloat: true,
                 path: 'gis/dijit/Measurement',
-                title: 'Measurement',
+                title: 'Medidas',
                 open: false,
                 position: 5,
                 options: {
@@ -411,7 +476,7 @@ define([
                 type: 'titlePane',
                 canFloat: true,
                 path: 'gis/dijit/Print',
-                title: 'Print',
+                title: 'Imprimir',
                 open: false,
                 position: 6,
                 options:
@@ -494,7 +559,7 @@ define([
                 id: 'help',
                 type: 'floating',
                 path: 'gis/dijit/Help',
-                title: 'Help',
+                title: 'Ayuda',
                 options: {}
             }
 
