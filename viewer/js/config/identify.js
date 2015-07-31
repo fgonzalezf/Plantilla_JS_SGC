@@ -21,12 +21,30 @@ define({
 	// for details on pop-up definition see: https://developers.arcgis.com/javascript/jshelp/intro_popuptemplate.html
 
 	identifies: {
-		meetupHometowns: {
+		Metadato: {
 			0: {
-				title: 'Hometowns',
+				title: 'Metadato',
 				fieldInfos: [{
-					fieldName: 'Location',
+					fieldName: 'MD_METADATA_ID',
+					label: "Identificador",
 					visible: true
+				}, {
+					fieldName: 'FILEIDENTIFIER',
+					label: "Identificador SICAT",
+					visible: true
+				}, {
+					fieldName: 'TITLE',
+					label: "Titulo",
+					visible: true
+				},],
+				mediaInfos: [{
+					title: '',
+					caption: '',
+					type: 'image',
+					value: {
+						sourceURL: 'images/bookT.png',
+						linkURL: '{URL}'
+					}
 				}]
 			}
 		},

@@ -7,17 +7,17 @@
 // if need be or checkout the link above and submit a PR
 define({
     root: {
-    	noLegend: 'No Legend',
-        moveUp: 'Move Up',
-        moveDown: 'Move Down',
-        zoomTo: 'Zoom to Layer',
-        transparency: 'Transparency',
-        metadata: 'Metadata',
+    	noLegend: 'Sin Legenda',
+        moveUp: 'Mover Arriba',
+        moveDown: 'Mover Abajo',
+        zoomTo: 'Acercar a la Capa',
+        transparency: 'Transparencia',
+        metadata: 'Metadato',
         layerSwipe: 'Layer Swipe',
         layerSwipeVertical: 'Vertical',
         layerSwipeHorizontal: 'Horizontal',
-        layerSwipeScope: 'Scope',
-        dynamicSublayersOn: 'Turn On All Sublayers',
-        dynamicSublayersOff: 'Turn Off All Sublayers'
+        layerSwipeScope: 'Alcance',
+        dynamicSublayersOn: 'Encender todas las subcapas',
+        dynamicSublayersOff: 'Apagar todas las subcapas'
     }
 });

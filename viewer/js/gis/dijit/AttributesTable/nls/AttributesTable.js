@@ -3,44 +3,44 @@ define({
     root: {
         messages: {
             searching: {
-                title: 'Searching',
-                message: 'Please wait...'
+                title: 'Seleccionando',
+                message: 'Espere un Momento Por Favor...'
             },
 
             searchError: {
-                title: 'Search Error',
-                message: 'Sorry, an error occurred and your search could not be completed.'
+                title: 'Error Seleccionando',
+                message: 'Lo sentimos , ha ocurrido un error y su b\u00fasqueda no se pudo completar.'
             },
 
             searchResults: {
-                title: 'Search Results',
+                title: 'Resultados de la B\u00fasqueda',
                 message: null,
-                noFeatures: 'No features',
+                noFeatures: 'No elementos',
                 feature: 'feature',
                 features: 'features',
-                found: 'found'
+                found: 'Encontrados'
             }
         },
 
         menus: {
             zoom: {
-                title: 'Zoom',
-                zoomToFeatures: 'Zoom To All Features',
-                zoomToSelectedFeatures: 'Zoom To Selected Features',
-                zoomToBuffer: 'Zoom To Buffer'
+                title: 'Acercar',
+                zoomToFeatures: 'Acercar a todos los Elementos',
+                zoomToSelectedFeatures: 'Acercar a Elementos seleccionados',
+                zoomToBuffer: 'Acercar al Buffer'
             },
 
             clear: {
-                title: 'Clear',
-                clearFeatures: 'Clear All Features',
-                clearSelectedFeatures: 'Clear Selected Features',
-                clearBufferGraphics: 'Clear Buffer',
-                clearGrid: 'Clear Grid',
-                clearAll: 'Clear All'
+                title: 'Limpiar',
+                clearFeatures: 'Limpiar Todos Los Elementos',
+                clearSelectedFeatures: 'Limpiar Elementos Seleccionados',
+                clearBufferGraphics: 'Limpiar Buffer',
+                clearGrid: 'Limpiar Cuadr\u00edcula',
+                clearAll: 'Limpiar Todo'
             },
 
             'export': {
-                title: 'Export'
+                title: 'Exportar'
             }
         }
     }

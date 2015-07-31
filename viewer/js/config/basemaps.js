@@ -1,19 +1,38 @@
 define([
-    //'esri/dijit/Basemap',
-    //'esri/dijit/BasemapLayer',
-    //'esri/layers/osm'
-], function ( /* Basemap, BasemapLayer, osm */ ) {
+    'esri/dijit/Basemap',
+    'esri/dijit/BasemapLayer',
+    'esri/layers/osm'
+], function ( Basemap, BasemapLayer, osm  ) {
     return {
         map: true, // needs a refrence to the map
-        mode: 'agol', //must be either 'agol' or 'custom'
+        mode: 'custom', //must be either 'agol' or 'custom'
         title: 'Mapas Base', // tilte for widget
         mapStartBasemap: 'streets', // must match one of the basemap keys below
         //basemaps to show in menu. define in basemaps object below and reference by name here
         // TODO Is this array necessary when the same keys are explicitly included/excluded below?
-        basemapsToShow: ['streets', 'satellite', 'hybrid', 'topo', 'lightGray', 'gray', 'national-geographic', 'osm', 'oceans'],
+        basemapsToShow: ['streets', 'satellite', 'hybrid', 'lightGray','sgcAMNS','sgcSTD'],
 
         // define all valid custom basemaps here. Object of Basemap objects. For custom basemaps, the key name and basemap id must match.
         basemaps: { // agol basemaps
+            sgcAMNS: {
+                title: 'Mapa de Sombras AMNS',
+                basemap: new Basemap({
+                    id: 'sgcAMNS',
+                    layers: [new BasemapLayer({
+                        url: 'http://srvags.sgc.gov.co/arcgis/rest/services/Mapa_Sombras_Colombia/Mapa_Sombras_Colombia_AMNS/MapServer'
+                    })]
+                })
+            },
+            sgcSTD: {
+                title: 'Mapa de Sombras AMNS',
+                basemap: new Basemap({
+                    id: 'sgcSTD',
+                    layers: [new BasemapLayer({
+                        url: 'http://srvags.sgc.gov.co/arcgis/rest/services/Mapa_Sombras_Colombia/Mapa_Sombras_Colombia/MapServer'
+                    })]
+                })
+            },
+            /*
             streets: {
                 title: 'Streets'
             },
@@ -38,10 +57,10 @@ define([
             osm: {
                 title: 'Open Street Map'
             }
-
+            */
             // examples of custom basemaps
 
-            /*streets: {
+            streets: {
                 title: 'Streets',
                 basemap: new Basemap({
                     id: 'streets',
@@ -87,7 +106,7 @@ define([
                         isReference: true
                     })]
                 })
-            }*/
+            }
         }
     };
 });

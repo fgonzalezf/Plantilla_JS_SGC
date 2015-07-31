@@ -147,7 +147,7 @@ define([
             {
                 type: 'dynamic',
                 url: 'http://srvags.sgc.gov.co/arcgis/rest/services/METG/METADATO/MapServer',
-                title: 'Metadato geografico',
+                title: 'Metadato geogr\u00e1fico',
                 options: {
                     id: 'Metadato',
                     opacity: 1.0,
@@ -205,7 +205,7 @@ define([
                 type: 'titlePane',
                 path: 'gis/dijit/Search',
                 canFloat: true,
-                title: 'Search',
+                title: 'B\u00fasqueda',
                 open: true,
                 position: 0,
                 options: 'config/searchWidget'
@@ -232,16 +232,21 @@ define([
                         {
                             title: 'Metadato',
                             topicID: 'censusQuery',
-                            queryOptions: {
+
+                            /*queryOptions: {
                                 queryParameters: {
+                                    type: 'spatial',
+                                    type: 'table',
+
                                     url: 'http://srvags.sgc.gov.co/arcgis/rest/services/METG/METADATO/MapServer/0',
-                                    maxAllowableOffset: 100,
-                                    where: ''
+
+                                    //outputSpatialReference: 4326,
+                                    //maxAllowableOffset: 100,
+                                    where: '1=1',
                                 },
 
                                 idProperty: 'ObjectID',
-                                outputSpatialReference: 4686,
-                            },
+                            },*/
                             featureOptions: {
                                 /*
                                  Show the resulting features on the map
@@ -256,12 +261,12 @@ define([
                                 /*
                                  Allow the display of an info window when a feature is selected
                                  */
-                                infoWindow: true,
+                                infoWindow: false,
 
                                 /*
                                  Allow the user to highlight features that have been selected in the grid
                                  */
-                                highlight: false,
+                                highlight: true,
 
                                 /*
                                  Show the source feature used in the search
@@ -408,7 +413,7 @@ define([
                 id: 'layerControl',
                 type: 'titlePane',
                 path: 'gis/dijit/LayerControl',
-                title: 'Capas de Información',
+                title: 'Capas de Informaci\u00f3n',
                 open: false,
                 position: 0,
                 options: {

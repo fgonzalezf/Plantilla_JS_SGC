@@ -16,13 +16,13 @@ define([
 
         layers: [
             {
-                name: 'Punto Geomorfodinamico',
+                name: 'Metadato',
                 expression: '', // additional where expression applied to all queries
-                idProperty: 'objectid',
+                idProperty: 'OBJECTID',
                 queryParameters: {
-                    type: 'table', // spatial, relationship, table or database
-                    layerID: 'PuntoGeomorfodinamico', // from operational layers
-                    sublayerID: 1,
+                    type: 'spatial', // spatial, relationship, table or database
+                    layerID: 'Metadato', // from operational layers
+                    sublayerID: 0,
                     outFields: ['*']
                 },
                 attributeSearches: [
@@ -30,9 +30,9 @@ define([
                         name: 'Busqueda por punto geomorfodinamico',
                         searchFields: [
                             {
-                                name: 'Codigo Punto',
-                                label: 'Codigo Punto',
-                                expression: '(PGMD_COD LIKE \'[value]%\')',
+                                name: 'MD_IDENTIFICATION_ID',
+                                label: 'Identificador',
+                                expression: '(MD_IDENTIFICATION_ID \'[value]%\')',
                                 placeholder: 'ingrese el punto a buscar',
                                 required: true,
                                 minChars: 3
@@ -40,17 +40,17 @@ define([
 
                         ],
 
-                        title: 'Punto Geomorfodinamico',
+                        title: 'Metadato',
                         topicID: 'assessmentsQuery',
                         gridOptions: {
                             columns: [
                                 {
-                                    field: 'PGMD_COD',
-                                    label: 'Código'
+                                    field: 'MD_METADATA_ID',
+                                    label: 'C\u00f3digo Metadato'
                                 },
                                 /*{
-                                    field: 'inspdate',
-                                    label: 'Inspected',
+                                    field: 'REFDATE',
+                                    label: 'Fecha',
                                     width: 150,
                                     get: function (object) { // allow export as a proper date
                                         return new Date(object.inspdate);
@@ -58,26 +58,30 @@ define([
                                     formatter: formatDateTime
                                 },*/
                                 {
-                                    field: 'PGMD_CLAT',
-                                    label: 'Latitud'
+                                    field: 'TITLE',
+                                    label: 'Titulo'
                                 },
                                 {
-                                    field: 'PGMD_CLON',
-                                    label: 'Longitud'
+                                    field: 'MD_IDENTIFICATION_ID',
+                                    label: 'IDENTIFICADOR'
                                 },
                                 {
-                                    field: 'PGMD_URL',
-                                    label: 'Enlace PDF'
+                                    field: 'NORTE',
+                                    label: 'Norte'
                                 },
                                 {
-                                    field: 'PGMD_VID',
-                                    label: 'Enlace Video'
+                                    field: 'ESTE',
+                                    label: 'Este'
+                                },
+                                {
+                                    field: 'URL',
+                                    label: 'Enlace'
                                 },
 
                             ],
                             sort: [
                                 {
-                                    attribute: 'PGMD_COD',
+                                    attribute: 'TITLE',
                                     descending: 'ASC'
                                 }
                             ]

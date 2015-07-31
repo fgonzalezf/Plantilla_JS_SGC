@@ -1,14 +1,14 @@
 define ({
     root: {
         labels: {
-            selectLayer: 'Choose "All Visible Layers" or a single layer for identify:',
-            allVisibleLayers: '*** All Visible Layers ***'
+            selectLayer: 'Seleccione todas las capas o una especifica para el Identificador',
+            allVisibleLayers: '*** Todas las Capas ***'
         },
         rightClickMenuItem: {
-            label: 'Identify here'
+            label: 'Identifique'
         },
         mapInfoWindow: {
-            identifyingTitle: 'Identifying...'
+            identifyingTitle: 'Identificando...'
         }
     }
 });

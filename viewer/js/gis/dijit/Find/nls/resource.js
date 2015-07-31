@@ -1,29 +1,29 @@
 // http://dojotoolkit.org/reference-guide/1.10/dojo/i18n.html
 define({
    root: {
-       selectQuery: 'Select query',
+       selectQuery: 'Seleccione una Consulta',
        searchText: {
-           label: 'Search for',
-           placeholder: 'Enter the text you want to search for.'
+           label: 'Buscar por',
+           placeholder: 'Ingrese el textro que desea buscar.'
        },
-       exactMatches: 'Find exact matches only',
+       exactMatches: 'Encontrar coincidencias exactas.',
        searchButton: {
-           label: 'Search',
-           busyLabel: 'searching'
+           label: 'Buscar',
+           busyLabel: 'Buscando'
        },
        clearButton: {
-           label: 'Clear'
+           label: 'Limpiar'
        },
-       searching: 'Searching...',
+       searching: 'Buscando...',
        resultsLabel: {
            multipleResultsSuffix: 's',
-           labelPrefix: 'Result',
-           labelSuffix: 'found'
+           labelPrefix: 'Resultado',
+           labelSuffix: 'Encontrado'
        },
-       noResultsLabel: 'No results found.',
-       optionsLabel: 'Options',
-       zoomOnSelect: 'Zoom on select',
-       zoomOnDeselect: 'Zoom on deselect'
+       noResultsLabel: 'Resultados No Encontrados.',
+       optionsLabel: 'Optiones',
+       zoomOnSelect: 'Acercar a la selecci\u00f3n',
+       zoomOnDeselect: 'Acercar a la deselecci\u00f3n'
    }
 });
 

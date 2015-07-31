@@ -19,7 +19,7 @@ define([
 		widgetsInTemplate: true,
 		templateString: template,
 		title: 'Help',
-		html: '<a href="#">Help</a>',
+		html: '<a href="#">Ayuda</a>',
 		domTarget: 'helpDijit',
 		draggable: false,
 		baseClass: 'helpDijit',

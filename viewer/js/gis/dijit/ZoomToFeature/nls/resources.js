@@ -1,6 +1,6 @@
 define({
     root: {
-        selectFeature: 'Select A Feature',
-        clearButton: 'Clear Result'
+        selectFeature: 'Seleccionar un elemento',
+        clearButton: 'Limpiar selecci\u00f3n'
     }
 });
