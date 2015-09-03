@@ -27,12 +27,12 @@ define([
                 },
                 attributeSearches: [
                     {
-                        name: 'Busqueda por punto geomorfodinamico',
+                        name: 'Busqueda Metadato Geografico',
                         searchFields: [
                             {
-                                name: 'MD_IDENTIFICATION_ID',
-                                label: 'Identificador',
-                                expression: '(MD_IDENTIFICATION_ID \'[value]%\')',
+                                name: 'Titulo metadato',
+                                label: 'Titulo',
+                                expression: '(TITLE LIKE \'[value]%\')',
                                 placeholder: 'ingrese el punto a buscar',
                                 required: true,
                                 minChars: 3
@@ -41,12 +41,12 @@ define([
                         ],
 
                         title: 'Metadato',
-                        topicID: 'assessmentsQuery',
+                        topicID: 'Metadato',
                         gridOptions: {
                             columns: [
                                 {
                                     field: 'MD_METADATA_ID',
-                                    label: 'C\u00f3digo Metadato'
+                                    label: 'Codigo Metadato'
                                 },
                                 /*{
                                     field: 'REFDATE',
@@ -59,7 +59,8 @@ define([
                                 },*/
                                 {
                                     field: 'TITLE',
-                                    label: 'Titulo'
+                                    label: 'Titulo',
+                                    width: 150
                                 },
                                 {
                                     field: 'MD_IDENTIFICATION_ID',

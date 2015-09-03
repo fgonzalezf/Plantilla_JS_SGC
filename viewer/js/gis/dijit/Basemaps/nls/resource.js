@@ -1,5 +1,5 @@
 define ({
     root: {
-        title: 'Basemaps'
+        title: 'Mapas Base'
     }
 });

@@ -88,28 +88,28 @@ define([
         bufferUnits: [
             {
                 value: GeometryService.UNIT_FOOT,
-                label: 'Feet',
+                label: 'Pies',
                 selected: true
             },
             {
                 value: GeometryService.UNIT_STATUTE_MILE,
-                label: 'Miles'
+                label: 'Millas'
             },
             {
                 value: GeometryService.UNIT_METER,
-                label: 'Meters'
+                label: 'Metros'
             },
             {
                 value: GeometryService.UNIT_KILOMETER,
-                label: 'Kilometers'
+                label: 'Kilometros'
             },
             {
                 value: GeometryService.UNIT_NAUTICAL_MILE,
-                label: 'Nautical Miles'
+                label: 'Milla Nautica'
             },
             {
                 value: GeometryService.UNIT_US_NAUTICAL_MILE,
-                label: 'US Nautical Miles'
+                label: 'US Milla Nautica'
             }
         ],
 
