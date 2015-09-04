@@ -3,10 +3,10 @@ define({
    zoomExtentFactor: 2,
    queries: [
 	   {
-		   description: 'Find A Public Safety Location By Name',
-		   url: 'http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/PublicSafety/PublicSafetyOperationalLayers/MapServer',
-		   layerIds: [1, 2, 3, 4, 5, 6, 7],
-		   searchFields: ['FDNAME, PDNAME', 'NAME', 'RESNAME'],
+		   description: 'Busqueda Por metadato',
+		   url: 'http://srvags.sgc.gov.co/arcgis/rest/services/METG/METADATO/MapServer',
+		   layerIds: [0,1,2,3],
+		   searchFields: ['TITLE', 'PLA_NUMR_P', 'MUNI_NOMBR', 'DPT_NOMBRE','TITLE'],
 		   minChars: 2,
 		   gridColumns: [
 			   { field: 'Name', label: 'Name' },
@@ -21,7 +21,7 @@ define({
 		   prompt: 'fdname, pdname, name or resname',
 		   selectionMode: 'single'
 	   },
-	   {
+	   /*{
 		   description: 'Find Incident By Code/Description',
 		   url: 'http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/PublicSafety/PublicSafetyOperationalLayers/MapServer',
 		   layerIds: [15, 17, 18],
@@ -51,7 +51,7 @@ define({
 				   }
 			   }
 		   ]
-	   }
+	   }*/
    ],
    selectionSymbols: {
 	   polygon: {

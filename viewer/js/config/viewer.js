@@ -210,10 +210,23 @@ define([
                 position: 0,
                 options: 'config/searchWidget'
             },
+
+            eSearch: {
+                include: true,
+                id: 'eSearch',
+                type: 'titlePane',
+                canFloat: false,
+                path: 'gis/dijit/eSearch',
+                title: 'Busqueda Avanzada',
+                open: false,
+                position: 12,
+                options: 'config/eSearch'
+            },
             attributesTable: {
                 include: true,
                 id: 'attributesContainer',
                 type: 'domNode',
+                open: false,
                 srcNodeRef: 'attributesContainer',
                 path: 'gis/dijit/AttributesTable',
                 options: {
@@ -231,15 +244,13 @@ define([
                     tables: [
                         {
                             title: 'Metadato',
-                            topicID: 'censusQuery',
+                            topicID: 'Metadato',
 
                             /*queryOptions: {
                                 queryParameters: {
                                     type: 'spatial',
                                     type: 'table',
-
                                     url: 'http://srvags.sgc.gov.co/arcgis/rest/services/METG/METADATO/MapServer/0',
-
                                     //outputSpatialReference: 4326,
                                     //maxAllowableOffset: 100,
                                     where: '1=1',

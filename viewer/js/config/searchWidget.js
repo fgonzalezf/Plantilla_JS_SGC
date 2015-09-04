@@ -32,8 +32,8 @@ define([
                             {
                                 name: 'Titulo metadato',
                                 label: 'Titulo',
-                                expression: '(TITLE LIKE \'[value]%\')',
-                                placeholder: 'ingrese el punto a buscar',
+                                expression: '(upper(TITLE) LIKE upper(\'[value]%\'))',
+                                placeholder: 'Ingrese el titulo del metadato',
                                 required: true,
                                 minChars: 3
                             },
@@ -90,44 +90,33 @@ define([
                     }
                 ]
             },
-            /*{
-                name: 'Hospitals',
+            {
+                name: 'Municipios',
                 expression: '', // additional where expression applied to all queries
                 idProperty: 'OBJECTID',
                 queryParameters: {
-                    type: 'table', // spatial, relationship, table or database
-                    layerID: 'louisvillePubSafety', // from operational layers
-                    sublayerID: 5,
+                    type: 'spatial', // spatial, relationship, table or database
+                    layerID: 'Metadato', // from operational layers
+                    sublayerID: 2,
                     outFields: ['*']
                 },
                 attributeSearches: [
                     {
-                        name: 'Search For Hospital',
+                        name: 'Buscar por Municipio',
                         searchFields: [
                             {
-                                name: 'Hospital Name',
-                                label: 'Name',
-                                expression: '(NAME LIKE \'[value]%\')',
-                                placeholder: 'Enter the name of the hospital',
+                                name: 'Nombre del Municipio',
+                                label: 'Municipio',
+                                expression: '(upper(MUNI_NOMBR) LIKE upper(\'[value]%\'))',
+                                placeholder: 'Escriba el nombre del Municipio',
                                 required: true,
                                 minChars: 3
                             },
-                            {
-                                name: 'Total Admissions',
-                                label: 'Total Admissions >=',
-                                expression: '(TOTALADM >= [value])',
-                                placeholder: 'Total Admissions >='
-                            },
-                            {
-                                name: 'Total Admissions',
-                                label: 'Total Admissions <=',
-                                expression: '(TOTALADM <= [value])',
-                                placeholder: 'Total Admissions <='
-                            }
+
                         ],
 
-                        title: 'Hospitals',
-                        topicID: 'hospitalQuery',
+                        title: 'Municipios',
+                        topicID: 'MunicipiosId',
                         gridOptions: {
                             columns: [
                                 {
@@ -145,48 +134,20 @@ define([
                                     }
                                 },
                                 {
-                                    field: 'NAME',
-                                    label: 'Name',
+                                    field: 'MUNI_COD',
+                                    label: 'Codigo',
                                     width: 150
                                 },
                                 {
-                                    field: 'ADDRESS',
-                                    label: 'Address',
+                                    field: 'MUNI_NOMBR',
+                                    label: 'Nombre',
                                     width: 150
                                 },
-                                {
-                                    field: 'CITY',
-                                    label: 'City',
-                                    width: 80
-                                },
-                                {
-                                    field: 'STABREV',
-                                    label: 'State',
-                                    width: 50
-                                },
-                                {
-                                    field: 'ZIPCODE',
-                                    label: 'Zip Code',
-                                    width: 80
-                                },
-                                {
-                                    field: 'TOTALADM',
-                                    label: 'Total Admission',
-                                    width: 100
-                                },
-                                {
-                                    field: 'LASTUPDATE',
-                                    label: 'Last Update',
-                                    width: 100,
-                                    get: function (object) { // allow export as a proper date
-                                        return new Date(object.LASTUPDATE);
-                                    },
-                                    formatter: formatDateTime
-                                }
+
                             ],
                             sort: [
                                 {
-                                    attribute: 'NAME',
+                                    attribute: 'MUNI_NOMBR',
                                     descending: 'ASC'
                                 }
                             ]
@@ -195,6 +156,71 @@ define([
                 ]
             },
             {
+                name: 'Departamentos',
+                expression: '', // additional where expression applied to all queries
+                idProperty: 'OBJECTID',
+                queryParameters: {
+                    type: 'spatial', // spatial, relationship, table or database
+                    layerID: 'Metadato', // from operational layers
+                    sublayerID: 3,
+                    outFields: ['*']
+                },
+                attributeSearches: [
+                    {
+                        name: 'Buscar por Departameto',
+                        searchFields: [
+                            {
+                                name: 'Nombre del Departamento',
+                                label: 'Departamento',
+                                expression: '(upper(DPT_NOMBRE) LIKE upper(\'[value]%\'))',
+                                placeholder: 'Escriba el nombre del Departamento',
+                                required: true,
+                                minChars: 3
+                            },
+
+                        ],
+
+                        title: 'Departamentos',
+                        topicID: 'DepartamentosId',
+                        gridOptions: {
+                            columns: [
+                                {
+                                    id: 'Action',
+                                    field: 'OBJECTID',
+                                    label: 'Action',
+                                    width: 32,
+                                    sortable: false,
+                                    exportable: false,
+                                    renderCell: function (object, value, node) {
+                                        on(node, 'click', function () {
+                                            alert('Do something exciting here like search for related records or edit the selected record.');
+                                        });
+                                        node.innerHTML = '<i class=\'fa fa-pencil\' style=\'margin-left:8px;\'></i>';
+                                    }
+                                },
+                                {
+                                    field: 'DPT_COD',
+                                    label: 'Codigo',
+                                    width: 150
+                                },
+                                {
+                                    field: 'DPT_NOMBRE',
+                                    label: 'Nombre',
+                                    width: 150
+                                },
+
+                            ],
+                            sort: [
+                                {
+                                    attribute: 'DPT_NOMBRE',
+                                    descending: 'ASC'
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            /*{
                 name: 'Police Stations',
                 expression: '', // additional where expression applied to all queries
                 queryParameters: {
